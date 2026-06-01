@@ -71,7 +71,7 @@ export default function LoadingScreen() {
             />
           ))}
 
-          <div className="absolute w-full flex flex-col items-center" style={{ top: "35%", transform: "translateY(-50%)" }}>
+          <div className="relative z-10 flex flex-col items-center">
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}

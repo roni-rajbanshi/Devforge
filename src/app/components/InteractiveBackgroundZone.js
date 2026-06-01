@@ -128,9 +128,10 @@ export default function InteractiveBackgroundZone({ children, theme = "minecraft
     // Initial content scan
     updateExclusionZones();
 
-    // Create ambient background particles (representing tiny stars/embers, count increased to 380 on behalf of the tags)
+    // Create ambient background particles (representing tiny stars/embers)
     const bgParticles = [];
-    const particleCount = 380;
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+    const particleCount = isMobile ? 80 : 380;
     for (let i = 0; i < particleCount; i++) {
       bgParticles.push({
         x: Math.random() * width,

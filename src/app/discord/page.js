@@ -239,7 +239,7 @@ export default function DiscordPage() {
           />
 
           {/* Hero Content */}
-          <div className="relative z-[2] min-h-screen">
+          <div className="relative z-[2] min-h-screen flex items-center px-6 sm:px-12 md:px-20">
             <motion.div
               initial={{
                 opacity: 0,
@@ -254,18 +254,14 @@ export default function DiscordPage() {
                 duration: 0.8,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="absolute"
+              className="w-full max-w-[900px] mt-16 md:mt-0"
               style={{
-                left: "20px",
-                top: "40%",
-                transform: "translateY(-50%)",
-                width: "1100px",
                 willChange: "transform, opacity",
               }}
             >
               {/* Badge */}
               <div
-                className="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-8"
+                className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full mb-6 sm:mb-8"
                 style={{
                   background: `${AC}08`,
                   border: `1px solid ${AC}20`,
@@ -278,7 +274,7 @@ export default function DiscordPage() {
                 />
 
                 <span
-                  className="text-[14px] tracking-[6px] uppercase"
+                  className="text-[10px] sm:text-[12px] md:text-[14px] tracking-[3px] sm:tracking-[6px] uppercase"
                   style={{
                     color: AC,
                     fontFamily: "var(--font-mono)",
@@ -290,10 +286,10 @@ export default function DiscordPage() {
 
               {/* Heading */}
               <h1
-                className="font-black leading-[0.85] mb-6"
+                className="font-black leading-[0.9] sm:leading-[0.85] mb-6"
                 style={{
                   fontFamily: "var(--font-heading)",
-                  fontSize: "clamp(4rem, 8vw, 8rem)",
+                  fontSize: "clamp(2.5rem, 8vw, 8rem)",
                 }}
               >
                 <span className="block text-white">
@@ -315,10 +311,7 @@ export default function DiscordPage() {
 
               {/* Description */}
               <p
-                className="text-gray-400 text-lg sm:text-xl leading-relaxed"
-                style={{
-                  maxWidth: "750px",
-                }}
+                className="text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-[750px]"
               >
                 Developing intelligent Discord ecosystems with advanced moderation
                 bots, automation workflows, verification systems, and scalable
@@ -331,28 +324,37 @@ export default function DiscordPage() {
         {/* Content Zone wrapped in Matter.js InteractiveBackgroundZone */}
         <InteractiveBackgroundZone theme="discord" color={AC}>
           {/* About */}
-          <section className="relative py-28 px-6 overflow-visible">
+          <section className="relative py-16 sm:py-28 px-4 sm:px-6 overflow-visible">
             <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: `linear-gradient(${AC}60 1px, transparent 1px), linear-gradient(90deg, ${AC}60 1px, transparent 1px)`, backgroundSize: "50px 50px" }} />
             <div className="w-full max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-4 items-center">
-                <ClientOnly fallbackHeight={540}><FadeIn><DiscordAboutScene /></FadeIn></ClientOnly>
+              <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-12 lg:gap-4 items-center">
+                {/* Desktop 3D scene */}
+                <div className="hidden lg:block">
+                  <ClientOnly fallbackHeight={540}><FadeIn><DiscordAboutScene /></FadeIn></ClientOnly>
+                </div>
+                {/* Mobile / Tablet responsive replacement */}
+                <div className="block lg:hidden w-full relative aspect-[4/3] max-w-[400px] mx-auto rounded-2xl overflow-hidden border border-[#7c3aed]/40 shadow-[0_0_30px_rgba(124,58,237,0.2)]">
+                  <img src="/discord-about.png" alt="" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                </div>
+
                 <div className="flex flex-col gap-6 lg:pl-8">
                   <FadeIn>
                     <span className="text-[13px] tracking-[5px] uppercase block mb-2" style={{ color: `${AC}80`, fontFamily: "var(--font-mono)" }}>About Me</span>
-                    <h2 className="text-4xl sm:text-5xl font-black text-white leading-tight" style={{ fontFamily: "var(--font-heading)" }}>
+                    <h2 className="text-3xl sm:text-5xl font-black text-white leading-tight" style={{ fontFamily: "var(--font-heading)" }}>
                       Automating <span style={{ color: AC }}>Interactions</span>
                     </h2>
                   </FadeIn>
                   <FadeIn delay={0.15}>
-                    <p className="text-gray-400 text-lg leading-relaxed">I design robust automation setups to help web and gaming communities run effortlessly — from channel structures to specialized verification portals linked to external APIs.</p>
-                    <p className="text-gray-500 leading-relaxed mt-4">I build secure digital zones where thousands of users connect, interact, and thrive.</p>
+                    <p className="text-gray-400 text-base sm:text-lg leading-relaxed">I design robust automation setups to help web and gaming communities run effortlessly — from channel structures to specialized verification portals linked to external APIs.</p>
+                    <p className="text-gray-500 leading-relaxed mt-2 sm:mt-4">I build secure digital zones where thousands of users connect, interact, and thrive.</p>
                   </FadeIn>
                   <FadeIn delay={0.25}>
-                    <div className="grid grid-cols-3 gap-3 mt-2">
+                    <div className="grid grid-cols-3 gap-2 sm:gap-3 mt-2">
                       {[{ num: "20+", label: "Custom Bots" }, { num: "100K+", label: "Members Guarded" }, { num: "4+", label: "Years Exp." }].map((s) => (
-                        <div key={s.label} className="text-center p-4 rounded-xl" style={{ background: `${AC}06`, border: `1px solid ${AC}12` }}>
-                          <div className="text-2xl font-black mb-1" style={{ color: AC, fontFamily: "var(--font-heading)" }}>{s.num}</div>
-                          <div className="text-[10px] tracking-wider uppercase text-gray-600" style={{ fontFamily: "var(--font-mono)" }}>{s.label}</div>
+                        <div key={s.label} className="text-center p-3 sm:p-4 rounded-xl" style={{ background: `${AC}06`, border: `1px solid ${AC}12` }}>
+                          <div className="text-lg sm:text-2xl font-black mb-1" style={{ color: AC, fontFamily: "var(--font-heading)" }}>{s.num}</div>
+                          <div className="text-[8px] sm:text-[10px] tracking-wider uppercase text-gray-600" style={{ fontFamily: "var(--font-mono)" }}>{s.label}</div>
                         </div>
                       ))}
                     </div>
@@ -363,24 +365,24 @@ export default function DiscordPage() {
           </section>
 
           {/* Skills */}
-          <section className="relative py-24 px-6">
+          <section className="relative py-16 sm:py-24 px-4 sm:px-6">
             <div className="w-full max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-[50%_50%] gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-[50%_50%] gap-12 lg:gap-12 items-center">
                 <div>
                   <FadeIn>
                     <span className="text-[13px] tracking-[5px] uppercase block mb-3" style={{ color: `${AC}80`, fontFamily: "var(--font-mono)" }}>Expertise</span>
-                    <h2 className="text-4xl sm:text-5xl font-black text-white mb-10" style={{ fontFamily: "var(--font-heading)" }}>Skills &amp; <span style={{ color: AC }}>Technologies</span></h2>
+                    <h2 className="text-3xl sm:text-5xl font-black text-white mb-6 sm:mb-10" style={{ fontFamily: "var(--font-heading)" }}>Skills &amp; <span style={{ color: AC }}>Technologies</span></h2>
                   </FadeIn>
                   <div className="flex flex-col gap-4">
                     {skills.map((skill, i) => (
                       <FadeIn key={skill.name} delay={i * 0.055}>
-                        <div className="p-5 rounded-2xl transition-all duration-300"
+                        <div className="p-4 sm:p-5 rounded-2xl transition-all duration-300"
                           style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)" }}
                           onMouseEnter={(e) => { e.currentTarget.style.borderColor = `${AC}30`; e.currentTarget.style.boxShadow = `0 0 30px ${AC}10`; }}
                           onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.05)"; e.currentTarget.style.boxShadow = "none"; }}>
                           <div className="flex justify-between mb-3">
-                            <span className="text-base font-semibold text-gray-200">{skill.name}</span>
-                            <span className="text-sm font-mono" style={{ color: `${AC}90` }}>{skill.level}%</span>
+                            <span className="text-sm sm:text-base font-semibold text-gray-200">{skill.name}</span>
+                            <span className="text-xs sm:text-sm font-mono" style={{ color: `${AC}90` }}>{skill.level}%</span>
                           </div>
                           <AnimatedBar level={skill.level} color={AC} delay={i * 0.055} />
                         </div>
@@ -388,23 +390,31 @@ export default function DiscordPage() {
                     ))}
                   </div>
                 </div>
-                <ClientOnly fallbackHeight={520}><FadeIn delay={0.2}><DiscordSkillsVisual /></FadeIn></ClientOnly>
+                {/* Desktop 3D scene */}
+                <div className="hidden lg:block">
+                  <ClientOnly fallbackHeight={520}><FadeIn delay={0.2}><DiscordSkillsVisual /></FadeIn></ClientOnly>
+                </div>
+                {/* Mobile / Tablet responsive replacement */}
+                <div className="block lg:hidden w-full relative aspect-[3/4] max-w-[320px] mx-auto rounded-2xl overflow-hidden border border-[#7c3aed]/40 shadow-[0_0_30px_rgba(124,58,237,0.2)]">
+                  <img src="/discord-skills.png" alt="" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                </div>
               </div>
             </div>
           </section>
 
           {/* Spacer */}
-          <div className="h-16 md:h-24 lg:h-32"></div>
+          <div className="h-8 sm:h-16 md:h-24 lg:h-32"></div>
 
           {/* Projects */}
-          <section className="relative py-24 px-6">
+          <section className="relative py-16 sm:py-24 px-4 sm:px-6">
             <div className="w-full max-w-7xl mx-auto">
-              <div className="grid lg:grid-cols-[320px_1fr] gap-12 items-start">
+              <div className="grid lg:grid-cols-[320px_1fr] gap-8 lg:gap-12 items-start">
 
                 {/* Left Side Heading */}
-                <FadeIn>
-                  <div className="flex items-center justify-center h-[450px]">
-                    <div>
+                <FadeIn className="w-full">
+                  <div className="flex items-center justify-center lg:justify-start lg:h-[450px] h-auto mb-6 lg:mb-0">
+                    <div className="text-center lg:text-left">
                       <span
                         className="text-[13px] tracking-[5px] uppercase block mb-3"
                         style={{
@@ -416,12 +426,12 @@ export default function DiscordPage() {
                       </span>
 
                       <h2
-                        className="text-4xl sm:text-6xl font-black text-white leading-tight"
+                        className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight"
                         style={{
                           fontFamily: "var(--font-heading)",
                         }}
                       >
-                        Featured <br />
+                        Featured <br className="hidden lg:block" />
                         <span style={{ color: AC }}>
                           Bots &amp; Setups
                         </span>

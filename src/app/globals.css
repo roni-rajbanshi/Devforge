@@ -479,11 +479,16 @@ body {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   body {
-    cursor: auto;
+    cursor: auto !important;
+  }
+
+  a, button, [role="button"], .interactive, .cta-btn {
+    cursor: pointer !important;
   }
 
   .custom-cursor,
-  .cursor-dot {
+  .cursor-dot,
+  .cursor-wrapper {
     display: none !important;
   }
 

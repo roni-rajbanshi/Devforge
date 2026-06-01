@@ -123,7 +123,6 @@ function FloatingCard({ contact, index, inView }) {
           position: "relative",
           zIndex: 1,
           textDecoration: "none",
-          cursor: "none",
           transition: "transform 0.18s cubic-bezier(0.23,1,0.32,1), box-shadow 0.3s ease, border-color 0.3s ease",
           transformStyle: "preserve-3d",
           background: "rgba(8,8,18,0.60)",

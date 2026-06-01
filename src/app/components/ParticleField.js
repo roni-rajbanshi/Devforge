@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
@@ -96,14 +96,24 @@ function FloatingGeo() {
 }
 
 export default function ParticleField() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <div className="absolute inset-0 z-0">
-      <Canvas camera={{ position: [0, 0, 10], fov: 60 }} dpr={[1, 1.5]}>
+      <Canvas camera={{ position: [0, 0, 10], fov: 60 }} dpr={[1, 1.2]}>
         <ambientLight intensity={0.2} />
         <pointLight position={[10, 10, 10]} intensity={0.5} color="#00f0ff" />
         <pointLight position={[-10, -10, -10]} intensity={0.3} color="#a855f7" />
-        <Particles count={600} />
-        <FloatingGeo />
+        <Particles count={isMobile ? 150 : 600} />
+        {!isMobile && <FloatingGeo />}
       </Canvas>
     </div>
   );

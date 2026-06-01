@@ -49,12 +49,12 @@ export default function HeroSection() {
           className="mb-4 flex justify-center"
           style={{ willChange: "transform, opacity" }}
         >
-          <div className="flex items-center gap-4 text-[#00f0ff] uppercase tracking-[0.3em] font-bold text-sm" style={{ fontFamily: "var(--font-mono)" }}>
-            <span className="text-[#00f0ff] opacity-80 text-xs">❖</span>
-            <span className="h-[1px] w-8 bg-[#00f0ff]/50" />
-            <span className="tracking-[0.4em] text-xs">Developer Collective</span>
-            <span className="h-[1px] w-8 bg-[#00f0ff]/50" />
-            <span className="text-[#00f0ff] opacity-80 text-xs">❖</span>
+          <div className="flex items-center gap-2 sm:gap-4 text-[#00f0ff] uppercase tracking-[0.15em] sm:tracking-[0.3em] font-bold text-xs sm:text-sm" style={{ fontFamily: "var(--font-mono)" }}>
+            <span className="text-[#00f0ff] opacity-80 text-[10px] sm:text-xs">❖</span>
+            <span className="h-[1px] w-4 sm:w-8 bg-[#00f0ff]/50" />
+            <span className="tracking-[0.2em] sm:tracking-[0.4em] text-[10px] sm:text-xs">Developer Collective</span>
+            <span className="h-[1px] w-4 sm:w-8 bg-[#00f0ff]/50" />
+            <span className="text-[#00f0ff] opacity-80 text-[10px] sm:text-xs">❖</span>
           </div>
         </motion.div>
 
@@ -66,16 +66,16 @@ export default function HeroSection() {
           className="flex flex-col items-center"
           style={{ willChange: "transform, opacity" }}
         >
-          <h1 className="leading-[0.88] mb-8 text-center" style={{ fontFamily: "var(--font-heading)" }}>
+          <h1 className="leading-[0.88] mb-6 sm:mb-8 text-center" style={{ fontFamily: "var(--font-heading)" }}>
             <span 
-              className="block text-[clamp(2.5rem,7vw,6rem)] font-black text-white tracking-wider" 
+              className="block text-[clamp(1.8rem,6vw,6rem)] font-black text-white tracking-wider" 
               style={{ textShadow: "0 4px 20px rgba(0,0,0,0.8)" }}
             >
               WE ARE
             </span>
 
             <span
-              className="block text-[clamp(3.5rem,11vw,9.5rem)] font-black tracking-tighter"
+              className="block text-[clamp(2.8rem,10vw,9.5rem)] font-black tracking-tighter"
               style={{
                 background: "linear-gradient(to right, #00f0ff, #3b82f6, #a855f7, #f97316)",
                 WebkitBackgroundClip: "text",
@@ -100,7 +100,7 @@ export default function HeroSection() {
         >
           <div className="flex flex-col items-center">
             <p 
-              className="text-gray-200 text-xs sm:text-sm md:text-base font-semibold tracking-[0.2em] uppercase leading-relaxed text-center max-w-4xl px-4 mb-4" 
+              className="text-gray-200 text-[10px] xs:text-xs sm:text-sm md:text-base font-semibold tracking-[0.12em] sm:tracking-[0.2em] uppercase leading-relaxed text-center max-w-4xl px-4 mb-4" 
               style={{ fontFamily: "var(--font-mono)" }}
             >
               THREE MINDS. THREE CRAFTS. ONE RELENTLESS PURSUIT OF
@@ -110,9 +110,9 @@ export default function HeroSection() {
             
             {/* Bottom Decoration */}
             <div className="flex items-center gap-3">
-               <span className="h-[1px] w-16 md:w-32 bg-gradient-to-r from-transparent to-[#8b5cf6]" />
-               <span className="text-[#8b5cf6] text-[10px] shadow-[0_0_10px_#8b5cf6]">❖</span>
-               <span className="h-[1px] w-16 md:w-32 bg-gradient-to-l from-transparent to-[#8b5cf6]" />
+               <span className="h-[1px] w-12 md:w-32 bg-gradient-to-r from-transparent to-[#8b5cf6]" />
+               <span className="text-[#8b5cf6] text-[8px] sm:text-[10px] shadow-[0_0_10px_#8b5cf6]">❖</span>
+               <span className="h-[1px] w-12 md:w-32 bg-gradient-to-l from-transparent to-[#8b5cf6]" />
             </div>
           </div>
         </motion.div>
