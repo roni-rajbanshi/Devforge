@@ -24,9 +24,9 @@ function Counter({ value, suffix = "", label, accentColor, delay = 0 }) {
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay }}
-      className="text-center px-6 py-8"
+      className="text-center px-3 py-6 sm:px-6 sm:py-8"
     >
-      <div className="text-4xl sm:text-5xl font-black mb-2" style={{ fontFamily: "var(--font-heading)", color: accentColor }}>
+      <div className="text-3xl sm:text-4xl md:text-5xl font-black mb-2" style={{ fontFamily: "var(--font-heading)", color: accentColor }}>
         {display}{suffix}
       </div>
       <div className="text-sm text-gray-500 tracking-wider uppercase" style={{ fontFamily: "var(--font-mono)" }}>

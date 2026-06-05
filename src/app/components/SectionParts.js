@@ -28,7 +28,7 @@ export function SectionHeader({ badge, title, titleAccent, subtitle, accentColor
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6"
+        className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black mb-6"
         style={{ fontFamily: "var(--font-heading)" }}
       >
         <span className="text-white">{title} </span>
@@ -45,7 +45,7 @@ export function SectionHeader({ badge, title, titleAccent, subtitle, accentColor
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed"
+        className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed"
       >
         {subtitle}
       </motion.p>

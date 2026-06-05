@@ -510,7 +510,16 @@ export default function InteractiveBackgroundZone({ children, theme = "minecraft
           }
         }
 
-
+        // Skip drawing if particle is inside a content exclusion zone
+        let inZone = false;
+        for (let i = 0; i < exclusionZones.length; i++) {
+          const z = exclusionZones[i];
+          if (p.x >= z.x1 && p.x <= z.x2 && p.y >= z.y1 && p.y <= z.y2) {
+            inZone = true;
+            break;
+          }
+        }
+        if (inZone) return;
 
         ctx.fillStyle = color;
         ctx.globalAlpha = p.alpha;
@@ -519,6 +528,7 @@ export default function InteractiveBackgroundZone({ children, theme = "minecraft
         ctx.fill();
       });
       ctx.restore();
+
 
       // 2. Draw mouse force field indicator
       const hoverRadius = 160;

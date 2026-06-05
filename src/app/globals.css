@@ -27,8 +27,6 @@
 
 html {
   scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 240, 255, 0.3) transparent;
 }
 
 body {
@@ -39,18 +37,6 @@ body {
   cursor: none;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--color-neon-cyan), var(--color-neon-purple));
-  border-radius: 3px;
-}
 
 /* ===== CUSTOM CURSOR & STATES ===== */
 .cursor-wrapper {
@@ -431,13 +417,19 @@ body {
 /* ===== LOADING SCREEN ===== */
 .loader-container {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
   z-index: 100000;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   background: var(--color-dark-900);
+  margin: 0;
+  padding: 0;
 }
 
 .loader-ring {
@@ -494,13 +486,27 @@ body {
 
   .section-container {
     padding: 0 16px;
+    overflow-x: hidden;
+  }
+
+  section {
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  p {
+    overflow-wrap: break-word;
   }
 }
 
 @media (max-width: 480px) {
-  .cta-btn {
-    padding: 12px 24px;
-    font-size: 0.75rem;
+  .skill-pill {
+    padding: 6px 14px;
+    font-size: 0.8rem;
   }
 }
 
@@ -562,4 +568,61 @@ body {
 
 .animate-floor-pulse {
   animation: floorRingPulse 4s ease-in-out infinite;
+}
+
+/* ===== MOBILE HERO BACKGROUND POSITIONING =====
+   Values chosen by directly inspecting each hero image:
+
+   discord-bg.png  (1456×816):
+     Minecraft-style character stands at ~82% from the left edge.
+     On mobile we pan to 82% so the character is the center of focus.
+
+   minecraft-bg.png (1456×816):
+     King on throne occupies ~72-78% from left.
+     75% keeps both the character face AND the throne visible.
+
+   web-bg.png (1280×960):
+     Real person stands at ~70-74% from left, slightly right of center.
+     72% centers the character body perfectly on narrow screens.
+===== */
+
+/* Desktop: keep inline style (center) — no override */
+
+/* ── 320px – 767px (all standard mobile sizes) ── */
+@media (max-width: 767px) {
+  /* Discord character is far right in the image (~82% from left) */
+  .hero-bg-discord {
+    background-position: 82% center !important;
+  }
+
+  /* Minecraft king sits at ~75% from left — keeps face + throne visible */
+  .hero-bg-minecraft {
+    background-position: 75% center !important;
+  }
+
+  /* Web Dev person stands at ~72% from left */
+  .hero-bg-web {
+    background-position: 72% center !important;
+  }
+}
+
+/* ── ≤ 390px: tighten further for iPhone 12/13/14 and similar ── */
+@media (max-width: 390px) {
+  .hero-bg-discord   { background-position: 84% center !important; }
+  .hero-bg-minecraft { background-position: 76% center !important; }
+  .hero-bg-web       { background-position: 73% center !important; }
+}
+
+/* ── ≤ 375px: iPhone SE / standard Android ── */
+@media (max-width: 375px) {
+  .hero-bg-discord   { background-position: 85% center !important; }
+  .hero-bg-minecraft { background-position: 78% center !important; }
+  .hero-bg-web       { background-position: 74% center !important; }
+}
+
+/* ── ≤ 320px: smallest supported width ── */
+@media (max-width: 320px) {
+  .hero-bg-discord   { background-position: 87% center !important; }
+  .hero-bg-minecraft { background-position: 80% center !important; }
+  .hero-bg-web       { background-position: 76% center !important; }
 }

@@ -21,12 +21,12 @@ export default function Home() {
     <>
       <LoadingScreen />
       <Navbar />
-      <main className="flex flex-col bg-[#030307]">
+      <div className="flex flex-col bg-[#030307]">
         <HeroSection />
         <VerticalSpacer />
         <CyberNav />
         <VerticalSpacer />
-      </main>
+      </div>
       <Footer />
     </>
   );

@@ -215,12 +215,12 @@ export default function DiscordPage() {
   return (
     <>
       <Navbar />
-      <main className="overflow-hidden">
+      <div className="overflow-x-hidden">
         {/* Hero */}
         <section className="relative min-h-screen overflow-hidden">
           {/* Background */}
           <div
-            className="absolute inset-0 z-0"
+            className="absolute inset-0 z-0 hero-bg-discord"
             style={{
               backgroundImage: "url('/discord-bg.png')",
               backgroundSize: "cover",
@@ -239,7 +239,7 @@ export default function DiscordPage() {
           />
 
           {/* Hero Content */}
-          <div className="relative z-[2] min-h-screen flex items-center px-6 sm:px-12 md:px-20">
+          <div className="relative z-[2] min-h-screen flex items-center px-4 sm:px-10 md:px-20">
             <motion.div
               initial={{
                 opacity: 0,
@@ -254,7 +254,7 @@ export default function DiscordPage() {
                 duration: 0.8,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="w-full max-w-[900px] mt-16 md:mt-0"
+              className="w-full max-w-[900px] mt-16 md:mt-0 hero-text-discord"
               style={{
                 willChange: "transform, opacity",
               }}
@@ -286,10 +286,10 @@ export default function DiscordPage() {
 
               {/* Heading */}
               <h1
-                className="font-black leading-[0.9] sm:leading-[0.85] mb-6"
+                className="font-black leading-[1.0] sm:leading-[0.9] mb-6 break-words"
                 style={{
                   fontFamily: "var(--font-heading)",
-                  fontSize: "clamp(2.5rem, 8vw, 8rem)",
+                  fontSize: "clamp(2rem, 9vw, 8rem)",
                 }}
               >
                 <span className="block text-white">
@@ -311,7 +311,7 @@ export default function DiscordPage() {
 
               {/* Description */}
               <p
-                className="text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-[750px]"
+                className="text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-[750px] break-words"
               >
                 Developing intelligent Discord ecosystems with advanced moderation
                 bots, automation workflows, verification systems, and scalable
@@ -350,7 +350,7 @@ export default function DiscordPage() {
                     <p className="text-gray-500 leading-relaxed mt-2 sm:mt-4">I build secure digital zones where thousands of users connect, interact, and thrive.</p>
                   </FadeIn>
                   <FadeIn delay={0.25}>
-                    <div className="grid grid-cols-3 gap-2 sm:gap-3 mt-2">
+                    <div className="grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 mt-2">
                       {[{ num: "20+", label: "Custom Bots" }, { num: "100K+", label: "Members Guarded" }, { num: "4+", label: "Years Exp." }].map((s) => (
                         <div key={s.label} className="text-center p-3 sm:p-4 rounded-xl" style={{ background: `${AC}06`, border: `1px solid ${AC}12` }}>
                           <div className="text-lg sm:text-2xl font-black mb-1" style={{ color: AC, fontFamily: "var(--font-heading)" }}>{s.num}</div>
@@ -445,7 +445,7 @@ export default function DiscordPage() {
                   {projects.map((p, i) => (
                     <FadeIn key={p.title} delay={i * 0.12}>
                       <div
-                        className="rounded-3xl p-10 text-center transition-all duration-300 hover:-translate-y-1"
+                        className="rounded-3xl p-5 sm:p-8 md:p-10 text-center transition-all duration-300 hover:-translate-y-1"
                         style={{
                           background: "rgba(255,255,255,0.02)",
                           border: "1px solid rgba(255,255,255,0.05)",
@@ -461,7 +461,7 @@ export default function DiscordPage() {
                         }}
                       >
                         <h3
-                          className="text-3xl font-bold text-white mb-3"
+                          className="text-xl sm:text-3xl font-bold text-white mb-3 break-words"
                           style={{
                             fontFamily: "var(--font-heading)",
                           }}
@@ -485,7 +485,7 @@ export default function DiscordPage() {
                           </span>
                         </div>
 
-                        <p className="text-gray-400 text-base leading-relaxed max-w-2xl mx-auto mb-5">
+                        <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto mb-5 break-words">
                           {p.desc}
                         </p>
 
@@ -520,12 +520,12 @@ export default function DiscordPage() {
           <div className="h-16 md:h-24 lg:h-15"></div>
 
           {/* Contact */}
-          <section className="relative py-24 pb-32 px-6">
+          <section className="relative py-16 sm:py-24 pb-24 sm:pb-32 px-4 sm:px-6">
             <div className="w-full max-w-4xl mx-auto text-center">
               <FadeIn>
                 <span className="text-[13px] tracking-[5px] uppercase block mb-3" style={{ color: `${AC}80`, fontFamily: "var(--font-mono)" }}>Get In Touch</span>
-                <h2 className="text-4xl sm:text-6xl font-black text-white mb-4" style={{ fontFamily: "var(--font-heading)" }}>Let&apos;s <span style={{ color: AC }}>Connect</span></h2>
-                <p className="text-gray-500 mb-12 text-lg">Need a custom Discord bot or high-level server setup? Reach out below.</p>
+                <h2 className="text-3xl sm:text-5xl md:text-6xl font-black text-white mb-4 break-words" style={{ fontFamily: "var(--font-heading)" }}>Let&apos;s <span style={{ color: AC }}>Connect</span></h2>
+                <p className="text-gray-500 mb-10 sm:mb-12 text-sm sm:text-lg">Need a custom Discord bot or high-level server setup? Reach out below.</p>
               </FadeIn>
               <FadeIn delay={0.15}>
                 <FloatingContactCards contacts={CONTACT_CARDS} />
@@ -534,7 +534,7 @@ export default function DiscordPage() {
           </section>
           <div className="h-24 md:h-32 lg:h-10"></div>
         </InteractiveBackgroundZone>
-      </main>
+      </div>
       <Footer />
     </>
   );

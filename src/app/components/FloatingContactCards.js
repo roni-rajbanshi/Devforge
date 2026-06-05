@@ -117,8 +117,8 @@ function FloatingCard({ contact, index, inView }) {
         style={{
           display: "flex",
           alignItems: "center",
-          gap: "22px",
-          padding: "24px 28px",
+          gap: "16px",
+          padding: "18px 20px",
           borderRadius: "22px",
           position: "relative",
           zIndex: 1,
@@ -130,7 +130,7 @@ function FloatingCard({ contact, index, inView }) {
           WebkitBackdropFilter: "blur(32px)",
           border: `1px solid ${accent}38`,
           boxShadow: `0 0 26px ${accent}22, 0 10px 34px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.07)`,
-          minHeight: "104px",
+          minHeight: "88px",
         }}
       >
         {/* Cursor light reflection layer */}
@@ -148,8 +148,8 @@ function FloatingCard({ contact, index, inView }) {
           transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut", delay: index * 0.45 }}
           style={{
             position: "relative",
-            width: "70px",
-            height: "70px",
+            width: "56px",
+            height: "56px",
             borderRadius: "50%",
             flexShrink: 0,
             display: "flex",
@@ -198,14 +198,14 @@ function FloatingCard({ contact, index, inView }) {
             {contact.label}
           </div>
           <div style={{
-            fontSize: "16px",
+            fontSize: "15px",
             fontWeight: 700,
             color: "#fff",
             fontFamily: "var(--font-heading)",
             letterSpacing: "0.4px",
-            whiteSpace: "nowrap",
             overflow: "hidden",
             textOverflow: "ellipsis",
+            whiteSpace: "nowrap",
           }}>
             {contact.value}
           </div>

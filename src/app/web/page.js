@@ -214,13 +214,13 @@ export default function WebPage() {
   return (
     <>
       <Navbar />
-      <main className="overflow-hidden">
+      <div className="overflow-x-hidden">
 
         {/* Hero */}
         <section className="relative min-h-screen overflow-hidden">
           {/* Background */}
           <div
-            className="absolute inset-0 z-0"
+            className="absolute inset-0 z-0 hero-bg-web"
             style={{
               backgroundImage: "url('/web-bg.png')",
               backgroundSize: "cover",
@@ -254,7 +254,7 @@ export default function WebPage() {
                 duration: 0.8,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="w-full max-w-[900px] mt-16 md:mt-0"
+              className="w-full max-w-[900px] mt-16 md:mt-0 hero-text-web"
               style={{
                 willChange: "transform, opacity",
               }}
@@ -531,7 +531,7 @@ export default function WebPage() {
           </section>
           <div className="h-24 md:h-32 lg:h-10"></div>
         </InteractiveBackgroundZone>
-      </main>
+      </div>
       <Footer />
     </>
   );
