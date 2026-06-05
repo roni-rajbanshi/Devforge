@@ -20,7 +20,6 @@ export default function Home() {
   return (
     <>
       <LoadingScreen />
-      <Navbar />
       <div className="flex flex-col bg-[#030307]">
         <HeroSection />
         <VerticalSpacer />

@@ -1,8 +1,8 @@
 "use client";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -32,6 +32,19 @@ export default function Navbar() {
   const [hoveredTab, setHoveredTab] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Auto-hide navbar logic
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    if (latest > previous && latest > 80) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
+
   const handleMouseMove = (e) => {
     if (!navRef.current) return;
     const rect = navRef.current.getBoundingClientRect();
@@ -50,9 +63,13 @@ export default function Navbar() {
             setHoveredTab(null);
           }}
           className="group/nav pointer-events-auto relative flex items-center justify-between px-3 sm:px-6 py-2 sm:py-3 h-[60px] sm:h-[68px] rounded-full border border-[#00d4ff]/30 bg-[#020205]/70 backdrop-blur-2xl shadow-[0_0_40px_rgba(0,212,255,0.15),inset_0_0_20px_rgba(0,212,255,0.1)] overflow-hidden w-full max-w-[960px] lg:w-[90%]"
-          initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          variants={{
+            visible: { y: 0, opacity: 1 },
+            hidden: { y: -100, opacity: 0 }
+          }}
+          initial="hidden"
+          animate={hidden ? "hidden" : "visible"}
+          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
         >
           {/* Faint moving light sweep across entire navbar (Very slow) */}
           <motion.div

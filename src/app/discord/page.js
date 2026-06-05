@@ -22,14 +22,12 @@ function ClientOnly({ children, fallbackHeight = 540 }) {
 }
 
 const skills = [
-  { name: "Discord Bots", level: 98 },
+  { name: "Discord Bots", level: 78 },
   { name: "Server Architecture", level: 95 },
   { name: "Verification Systems", level: 90 },
   { name: "API Integrations", level: 89 },
   { name: "Community Management", level: 92 },
   { name: "Automation Tools", level: 96 },
-  { name: "Node.js / Python", level: 94 },
-  { name: "OAuth2 & Webhooks", level: 88 },
 ];
 
 const projects = [
@@ -125,10 +123,10 @@ function DiscordAboutScene() {
         initial={{ opacity: 0, y: 20, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}>
         <div style={{
-            width: 400, height: 300, borderRadius: 22, overflow: "hidden",
-            border: `1.5px solid ${AC}40`, boxShadow: `0 0 60px ${AC}22, 0 30px 80px rgba(0,0,0,0.65)`,
-            transform: "rotate(3deg)"
-          }}>
+          width: 400, height: 300, borderRadius: 22, overflow: "hidden",
+          border: `1.5px solid ${AC}40`, boxShadow: `0 0 60px ${AC}22, 0 30px 80px rgba(0,0,0,0.65)`,
+          transform: "rotate(3deg)"
+        }}>
           <img src="/discord-about.png" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 55%, rgba(0,0,0,0.45))" }} />
           <div style={{
@@ -143,10 +141,10 @@ function DiscordAboutScene() {
         initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}>
         <div style={{
-            width: 150, height: 112, borderRadius: 16, overflow: "hidden",
-            border: `1.5px solid ${AC}40`, boxShadow: `0 0 30px ${AC}20, 0 16px 40px rgba(0,0,0,0.55)`,
-            transform: "rotate(-8deg)"
-          }}>
+          width: 150, height: 112, borderRadius: 16, overflow: "hidden",
+          border: `1.5px solid ${AC}40`, boxShadow: `0 0 30px ${AC}20, 0 16px 40px rgba(0,0,0,0.55)`,
+          transform: "rotate(-8deg)"
+        }}>
           <img src="/discord-bg.png" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
           <div style={{ position: "absolute", inset: 0, background: `${AC}18` }} />
         </div>
@@ -164,10 +162,10 @@ function DiscordAboutScene() {
         initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.4, duration: 0.8 }}>
         <div style={{
-            width: 145, height: 105, borderRadius: 14, overflow: "hidden",
-            border: `1.5px solid ${AC}35`, boxShadow: `0 0 28px ${AC}18, 0 12px 35px rgba(0,0,0,0.5)`,
-            transform: "rotate(6deg)"
-          }}>
+          width: 145, height: 105, borderRadius: 14, overflow: "hidden",
+          border: `1.5px solid ${AC}35`, boxShadow: `0 0 28px ${AC}18, 0 12px 35px rgba(0,0,0,0.5)`,
+          transform: "rotate(6deg)"
+        }}>
           <img src="/discord-skills.png" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         </div>
       </motion.div>
@@ -214,7 +212,6 @@ function DiscordSkillsVisual() {
 export default function DiscordPage() {
   return (
     <>
-      <Navbar />
       <div className="overflow-x-hidden">
         {/* Hero */}
         <section className="relative min-h-screen overflow-hidden">
@@ -274,7 +271,7 @@ export default function DiscordPage() {
                 />
 
                 <span
-                  className="text-[10px] sm:text-[12px] md:text-[14px] tracking-[3px] sm:tracking-[6px] uppercase"
+                  className="text-[10px] sm:text-[12px] md:text-[12px] tracking-[3px] sm:tracking-[6px] uppercase"
                   style={{
                     color: AC,
                     fontFamily: "var(--font-mono)",
@@ -286,10 +283,9 @@ export default function DiscordPage() {
 
               {/* Heading */}
               <h1
-                className="font-black leading-[1.0] sm:leading-[0.9] mb-6 break-words"
+                className="font-black leading-[1.0] sm:leading-[0.9] mb-4 break-words text-[clamp(2.5rem,8vw,3.5rem)] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem]"
                 style={{
                   fontFamily: "var(--font-heading)",
-                  fontSize: "clamp(2rem, 9vw, 8rem)",
                 }}
               >
                 <span className="block text-white">
@@ -311,7 +307,7 @@ export default function DiscordPage() {
 
               {/* Description */}
               <p
-                className="text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-[750px] break-words"
+                className="text-gray-400 text-sm sm:text-base md:text-lg lg:text-lg leading-relaxed max-w-[600px] break-words"
               >
                 Developing intelligent Discord ecosystems with advanced moderation
                 bots, automation workflows, verification systems, and scalable

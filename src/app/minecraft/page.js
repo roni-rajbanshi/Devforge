@@ -27,9 +27,7 @@ const skills = [
   { name: "Mini-games", level: 88 },
   { name: "PvP Systems", level: 92 },
   { name: "Economy Systems", level: 85 },
-  { name: "Java", level: 93 },
   { name: "Spigot / Paper", level: 96 },
-  { name: "Database Integration", level: 87 },
 ];
 
 const projects = [
@@ -194,7 +192,6 @@ function MinecraftSkillsVisual() {
 export default function MinecraftPage() {
   return (
     <>
-      <Navbar />
       <div className="overflow-x-hidden">
         {/* Hero */}
         <section className="relative min-h-screen overflow-hidden">

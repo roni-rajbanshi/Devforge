@@ -213,7 +213,6 @@ function WebSkillsVisual() {
 export default function WebPage() {
   return (
     <>
-      <Navbar />
       <div className="overflow-x-hidden">
 
         {/* Hero */}
