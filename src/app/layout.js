@@ -1,6 +1,7 @@
 import "./globals.css";
 import PageTransition from "./components/PageTransition";
 import CustomCursor from "./components/CustomCursor";
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata = {
   title: "DevForge | Elite Developer Collective",
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
       <body className="antialiased" suppressHydrationWarning>
         <PageTransition>{children}</PageTransition>
         <CustomCursor />
+        <Analytics />
       </body>
     </html>
   );
