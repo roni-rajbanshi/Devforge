@@ -8,7 +8,7 @@ import InteractiveBackgroundZone from "../components/InteractiveBackgroundZone";
 import FloatingContactCards from "../components/FloatingContactCards";
 
 const CONTACT_CARDS = [
-  { platform: "discord", label: "Discord", value: "NEXORA LABS", sub: "Community 24/7 Active", href: "https://discord.gg/M4PWygJjCu", accent: "#7c3aed" },
+  { platform: "discord", label: "Discord", value: "NEXORA LABS", sub: "Community 24/7 Active", href: "https://discord.gg/n9gQqRAVsh", accent: "#7c3aed" },
   { platform: "email", label: "Email", value: "hello@dev", sub: "Response < 24H", href: "mailto:devplayer4863@gmail.com", accent: "#06b6d4" },
 ];
 

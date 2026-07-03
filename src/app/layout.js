@@ -1,6 +1,9 @@
 import "./globals.css";
+import Navbar from "./components/Navbar";
 import PageTransition from "./components/PageTransition";
 import CustomCursor from "./components/CustomCursor";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
   title: "DevForge | Elite Developer Collective",

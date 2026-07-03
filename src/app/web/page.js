@@ -8,7 +8,7 @@ import InteractiveBackgroundZone from "../components/InteractiveBackgroundZone";
 import FloatingContactCards from "../components/FloatingContactCards";
 
 const CONTACT_CARDS = [
-  { platform: "discord", label: "Discord", value: "COZY HUB", sub: "Community 24/7 Active", href: "https://discord.gg/S4WhSnVRGK", accent: "#7c3aed" },
+  { platform: "discord", label: "Discord", value: "NEXORA LAB", sub: "Community 24/7 Active", href: "https://discord.gg/n9gQqRAVsh", accent: "#7c3aed" },
   { platform: "email", label: "Email", value: "hello@roni", sub: "Response < 24H", href: "mailto:ronirajbanshi2008@gmail.com", accent: "#06b6d4" },
   { platform: "github", label: "GitHub", value: "github.com/roni", sub: "50+ Repositories", href: "https://github.com/roni-rajbanshi", accent: "#3b82f6" },
 ];
@@ -130,10 +130,10 @@ function WebAboutScene() {
         initial={{ opacity: 0, y: 20, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}>
         <div style={{
-            width: 400, height: 295, borderRadius: 22, overflow: "hidden",
-            border: `1.5px solid ${AC}35`, boxShadow: `0 0 60px ${AC}20, 0 30px 80px rgba(0,0,0,0.65)`,
-            transform: "rotate(-2deg)"
-          }}>
+          width: 400, height: 295, borderRadius: 22, overflow: "hidden",
+          border: `1.5px solid ${AC}35`, boxShadow: `0 0 60px ${AC}20, 0 30px 80px rgba(0,0,0,0.65)`,
+          transform: "rotate(-2deg)"
+        }}>
           <img src="/web-about.png" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 55%, rgba(0,0,0,0.4))" }} />
           <div style={{
@@ -155,10 +155,10 @@ function WebAboutScene() {
         initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.4, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}>
         <div style={{
-            width: 165, height: 122, borderRadius: 16, overflow: "hidden",
-            border: `1.5px solid ${AC}40`, boxShadow: `0 0 35px ${AC}20, 0 16px 40px rgba(0,0,0,0.55)`,
-            transform: "rotate(6deg)"
-          }}>
+          width: 165, height: 122, borderRadius: 16, overflow: "hidden",
+          border: `1.5px solid ${AC}40`, boxShadow: `0 0 35px ${AC}20, 0 16px 40px rgba(0,0,0,0.55)`,
+          transform: "rotate(6deg)"
+        }}>
           <img src="/web-skills.png" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
           <div style={{ position: "absolute", inset: 0, background: `linear-gradient(135deg, ${AC}12, transparent)` }} />
         </div>

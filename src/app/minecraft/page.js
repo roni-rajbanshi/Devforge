@@ -8,8 +8,8 @@ import InteractiveBackgroundZone from "../components/InteractiveBackgroundZone";
 import FloatingContactCards from "../components/FloatingContactCards";
 
 const CONTACT_CARDS = [
-  { platform: "discord", label: "Discord", value: "NEXORA LABS", sub: "Community 24/7 Active", href: "https://discord.gg/M4PWygJjCu", accent: "#7c3aed" },
-  { platform: "email", label: "Email", value: "hello@Wonder", sub: "Response < 24H", href: "mailto:notwonderboy2008@gmail.com", accent: "#06b6d4" },
+  { platform: "discord", label: "Discord", value: "NEXORA LABS", sub: "Community 24/7 Active", href: "https://discord.gg/n9gQqRAVsh", accent: "#7c3aed" },
+  { platform: "email", label: "Email", value: "hello@wonder", sub: "Response < 24H", href: "mailto:notwonderboy2008@gmail.com", accent: "#06b6d4" },
 ];
 
 const AC = "#22c55e";
